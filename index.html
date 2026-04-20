@@ -170,7 +170,7 @@
         <div class="p-8 max-w-4xl w-full text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white">מי עובד עכשיו?</h2>
             <div id="profilesContainer" class="flex flex-wrap justify-center gap-10 mb-16"></div>
-            <button onclick="handleLogout()" class="border border-gray-600 text-gray-400 px-8 py-3 rounded-full hover:bg-white/10 hover:text-white transition-all text-sm font-bold tracking-wider">התנתק מהחשבון הראשי</button>
+            <button onclick="window.handleLogout()" class="border border-gray-600 text-gray-400 px-8 py-3 rounded-full hover:bg-white/10 hover:text-white transition-all text-sm font-bold tracking-wider">התנתק מהחשבון הראשי</button>
         </div>
     </div>
 
@@ -180,9 +180,9 @@
             <div class="space-y-4">
                 <input type="text" id="newProfileName" placeholder="שם המשתמש (למשל: אבא, שובל)" class="input-style">
                 <input type="date" id="newProfileBirth" class="input-style">
-                <button id="addProfileBtn" onclick="submitNewProfile()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl mt-4 transition-all">שמור והמשך</button>
-                <button id="deleteProfileBtn" onclick="deleteProfile()" class="hidden w-full bg-red-600/20 text-red-400 border border-red-600/30 hover:bg-red-600 hover:text-white font-bold py-3 rounded-xl transition-all mt-2">מחק פרופיל</button>
-                <button onclick="closeAddProfile()" class="w-full text-gray-500 text-sm py-2 hover:underline text-center block mt-2">ביטול</button>
+                <button id="addProfileBtn" onclick="window.submitNewProfile()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl mt-4 transition-all">שמור והמשך</button>
+                <button id="deleteProfileBtn" onclick="window.deleteProfile()" class="hidden w-full bg-red-600/20 text-red-400 border border-red-600/30 hover:bg-red-600 hover:text-white font-bold py-3 rounded-xl transition-all mt-2">מחק פרופיל</button>
+                <button onclick="window.closeAddProfile()" class="w-full text-gray-500 text-sm py-2 hover:underline text-center block mt-2">ביטול</button>
             </div>
         </div>
     </div>
@@ -196,9 +196,9 @@
                     <p class="text-gray-400 text-sm mt-2">חשבון אחד, עד 4 פרופילים נפרדים.</p>
                 </div>
                 <div class="space-y-4">
-                    <button onclick="showForm('register')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all">יצירת חשבון ראשי חדש</button>
-                    <button onclick="showForm('login')" class="w-full bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all border border-white/10">התחברות לחשבון קיים</button>
-                    <button onclick="closeModal()" class="w-full text-gray-500 text-sm hover:underline py-2 text-center block font-medium">המשך כאורח זמני</button>
+                    <button onclick="window.showForm('register')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all">יצירת חשבון ראשי חדש</button>
+                    <button onclick="window.showForm('login')" class="w-full bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all border border-white/10">התחברות לחשבון קיים</button>
+                    <button onclick="window.closeModal()" class="w-full text-gray-500 text-sm hover:underline py-2 text-center block font-medium">המשך כאורח זמני</button>
                 </div>
             </div>
 
@@ -217,8 +217,8 @@
                         <input type="file" id="regIdUpload" class="input-style text-sm !py-2">
                     </div>
                     <input type="date" id="regBirthDate" class="input-style">
-                    <button id="regSubmitBtn" onclick="submitRegister()" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl mt-4">צור חשבון מנהל</button>
-                    <button onclick="showForm('choice')" class="w-full text-gray-500 text-xs py-2 text-center block">חזרה</button>
+                    <button id="regSubmitBtn" onclick="window.submitRegister()" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl mt-4">צור חשבון מנהל</button>
+                    <button onclick="window.showForm('choice')" class="w-full text-gray-500 text-xs py-2 text-center block">חזרה</button>
                 </div>
             </div>
 
@@ -227,8 +227,8 @@
                 <div class="space-y-4">
                     <input type="email" id="loginEmail" placeholder="אימייל" class="input-style">
                     <input type="password" id="loginPassword" placeholder="סיסמה" class="input-style">
-                    <button id="loginSubmitBtn" onclick="submitLogin()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl">כניסה</button>
-                    <button onclick="showForm('choice')" class="w-full text-gray-500 text-xs py-2 text-center block">חזרה</button>
+                    <button id="loginSubmitBtn" onclick="window.submitLogin()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl">כניסה</button>
+                    <button onclick="window.showForm('choice')" class="w-full text-gray-500 text-xs py-2 text-center block">חזרה</button>
                 </div>
             </div>
         </div>
@@ -248,10 +248,10 @@
             <h3 class="text-2xl font-bold mb-4 text-center text-purple-400">פתק בכתב יד 🖊️</h3>
             <canvas id="drawCanvas"></canvas>
             <div class="flex justify-between items-center mt-4">
-                <button onclick="clearCanvas()" class="text-red-400 hover:text-red-300 font-bold text-sm px-4 py-2 border border-red-500/30 rounded-lg">נקה הכל</button>
+                <button onclick="window.clearCanvas()" class="text-red-400 hover:text-red-300 font-bold text-sm px-4 py-2 border border-red-500/30 rounded-lg">נקה הכל</button>
                 <div class="flex gap-2">
-                    <button onclick="closeDrawModal()" class="text-gray-400 hover:text-white text-sm px-4 py-2">ביטול</button>
-                    <button onclick="saveDrawnTask()" class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-6 rounded-lg shadow-md">שמור פתק</button>
+                    <button onclick="window.closeDrawModal()" class="text-gray-400 hover:text-white text-sm px-4 py-2">ביטול</button>
+                    <button onclick="window.saveDrawnTask()" class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-6 rounded-lg shadow-md">שמור פתק</button>
                 </div>
             </div>
         </div>
@@ -262,8 +262,8 @@
             <h3 class="text-2xl font-bold mb-4 text-center">תיקייה חדשה 📁</h3>
             <input type="text" id="newFolderName" placeholder="שם התיקייה (לדוגמה: ציורים שלי)" class="input-style mb-4">
             <div class="flex gap-2">
-                <button onclick="closeAddFolderModal()" class="flex-1 text-gray-400 hover:text-white text-sm px-4 py-2 border border-gray-600 rounded-lg">ביטול</button>
-                <button onclick="submitNewFolder()" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 rounded-lg shadow-md">צור</button>
+                <button onclick="window.closeAddFolderModal()" class="flex-1 text-gray-400 hover:text-white text-sm px-4 py-2 border border-gray-600 rounded-lg">ביטול</button>
+                <button onclick="window.submitNewFolder()" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 rounded-lg shadow-md">צור</button>
             </div>
         </div>
     </div>
@@ -272,7 +272,7 @@
     <nav class="max-w-6xl mx-auto w-full flex justify-between items-center mb-6 glass-card px-6 py-4 gap-4 relative z-40">
         <!-- צד ימין (הלחצן המגניב) -->
         <div class="flex items-center gap-4">
-            <button id="appMenuBtn" onclick="toggleAppMenu(event)" class="w-12 h-12 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors">
+            <button id="appMenuBtn" onclick="window.toggleAppMenu(event)" class="w-12 h-12 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors">
                 <div class="waffle-container">
                     <div class="waffle-dot dot-1"></div>
                     <div class="waffle-dot dot-2"></div>
@@ -291,37 +291,37 @@
         <div id="appDrawer" class="absolute top-20 right-6 w-72 glass-card p-4 shadow-2xl scale-0 opacity-0 pointer-events-none transition-all duration-300">
             <h3 class="text-center text-sm text-gray-400 font-bold mb-4 border-b border-white/10 pb-2">האפליקציות שלי</h3>
             <div class="grid grid-cols-3 gap-3">
-                <div onclick="openApp('search')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
+                <div onclick="window.openApp('search')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
                     <div class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg border border-white/20">🔍</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Search</span>
                 </div>
-                <div onclick="openApp('tasks')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
+                <div onclick="window.openApp('tasks')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
                     <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg">📝</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Tasks</span>
                 </div>
-                <div onclick="openApp('docs')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
+                <div onclick="window.openApp('docs')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
                     <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg">📄</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Docs</span>
                 </div>
-                <div onclick="openApp('accounts')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
+                <div onclick="window.openApp('accounts')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer">
                     <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg">👥</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Accounts</span>
                 </div>
-                <div onclick="openApp('editor')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer opacity-50">
+                <div onclick="window.openApp('editor')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer opacity-50">
                     <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg">✏️</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Editor</span>
                 </div>
-                <div onclick="openApp('slides')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer opacity-50">
+                <div onclick="window.openApp('slides')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer opacity-50">
                     <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg">📊</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Slides</span>
                 </div>
-                <div onclick="openApp('gallery')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer opacity-50">
+                <div onclick="window.openApp('gallery')" class="app-item flex flex-col items-center p-2 rounded-xl cursor-pointer opacity-50">
                     <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg">🖼️</div>
                     <span class="text-[10px] text-center font-bold text-gray-200">Smart Gallery</span>
                 </div>
             </div>
             <div class="mt-4 pt-3 border-t border-white/10 text-center">
-                <button onclick="openApp('settings')" class="text-xs text-gray-400 hover:text-white flex items-center justify-center gap-2 w-full">
+                <button onclick="window.openApp('settings')" class="text-xs text-gray-400 hover:text-white flex items-center justify-center gap-2 w-full">
                     ⚙️ הגדרות סביבה
                 </button>
             </div>
@@ -331,7 +331,7 @@
         <div class="flex items-center gap-3 md:gap-4">
             <button id="historyBtn" onclick="window.openHistory()" class="hidden bg-indigo-600/20 text-indigo-300 text-xs px-3 py-2 rounded-lg border border-indigo-600/30 transition-all hover:bg-indigo-600/40 font-bold">היסטוריה</button>
             <button id="switchProfileBtn" onclick="window.switchProfile()" class="hidden bg-purple-600/20 text-purple-400 text-xs px-3 py-2 rounded-lg border border-purple-600/30 transition-all hover:bg-purple-600/30 font-bold">החלף</button>
-            <button id="logoutBtn" onclick="handleLogout()" class="hidden bg-red-600/20 text-red-400 text-xs px-3 py-2 rounded-lg border border-red-600/30 transition-all hover:bg-red-600/30 font-bold">התנתק</button>
+            <button id="logoutBtn" onclick="window.handleLogout()" class="hidden bg-red-600/20 text-red-400 text-xs px-3 py-2 rounded-lg border border-red-600/30 transition-all hover:bg-red-600/30 font-bold">התנתק</button>
 
             <div id="userProfile" class="flex items-center gap-3 cursor-pointer" onclick="document.getElementById('profilesModal').classList.remove('hidden')">
                 <div class="flex flex-col text-left hidden sm:flex">
@@ -340,7 +340,7 @@
                 </div>
                 <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-500 to-gray-700 flex items-center justify-center font-bold text-lg border border-white/20 shadow-lg" id="userInitial">?</div>
             </div>
-            <button id="authBtn" onclick="openModal()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-4 py-2 rounded-lg font-bold transition-all shadow-md">התחבר</button>
+            <button id="authBtn" onclick="window.openModal()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-4 py-2 rounded-lg font-bold transition-all shadow-md">התחבר</button>
         </div>
     </nav>
 
@@ -360,8 +360,8 @@
                     <div class="absolute inset-0 bg-blue-500/20 blur-xl rounded-full group-hover:bg-blue-500/40 transition-all duration-500"></div>
                     <div class="relative flex items-center bg-[#0f111a] border-2 border-blue-500 rounded-full shadow-2xl overflow-hidden p-1 transition-transform focus-within:scale-105">
                         <span class="pl-4 pr-3 text-xl opacity-70">🔍</span>
-                        <input type="text" id="smartSearchInput" placeholder="חפש ברשת האינטרנט..." class="w-full bg-transparent text-white text-lg px-2 py-3 outline-none placeholder-gray-500" onkeydown="if(event.key === 'Enter') executeSmartSearch()">
-                        <button onclick="executeSmartSearch()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 px-6 rounded-full transition-all ml-1 text-sm shadow-md">חיפוש</button>
+                        <input type="text" id="smartSearchInput" placeholder="חפש ברשת האינטרנט..." class="w-full bg-transparent text-white text-lg px-2 py-3 outline-none placeholder-gray-500" onkeydown="if(event.key === 'Enter') window.executeSmartSearch()">
+                        <button onclick="window.executeSmartSearch()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 px-6 rounded-full transition-all ml-1 text-sm shadow-md">חיפוש</button>
                     </div>
                 </div>
 
@@ -388,7 +388,7 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="toggleAppMenu(event)" class="mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:scale-105 transition-transform animate-pulse">
+                <button onclick="window.toggleAppMenu(event)" class="mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:scale-105 transition-transform animate-pulse">
                     פתח אפליקציות עכשיו 🚀
                 </button>
             </div>
@@ -437,12 +437,12 @@
                     
                     <div class="flex gap-2 mb-4">
                         <input type="text" id="taskInput" placeholder="מה התוכנית היום?" class="input-style !mb-0 flex-1">
-                        <button id="penBtn" onclick="openDrawModal()" title="כתוב פתק בכתב יד" class="bg-purple-600/20 text-purple-400 border border-purple-500/30 hover:bg-purple-600 hover:text-white rounded-xl px-4 font-bold text-xl shadow-lg transition-all">
+                        <button id="penBtn" onclick="window.openDrawModal()" title="כתוב פתק בכתב יד" class="bg-purple-600/20 text-purple-400 border border-purple-500/30 hover:bg-purple-600 hover:text-white rounded-xl px-4 font-bold text-xl shadow-lg transition-all">
                             🖊️
                         </button>
                     </div>
                     
-                    <button onclick="addTask()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow-lg hover:bg-blue-500 transition-all">הוסף למשימות</button>
+                    <button onclick="window.addTask()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow-lg hover:bg-blue-500 transition-all">הוסף למשימות</button>
                 </div>
             </div>
 
@@ -450,7 +450,7 @@
                 <div class="glass-card p-6 min-h-[500px] shadow-xl">
                     <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-4">
                         <h2 class="text-xl font-bold text-right">לוח המשימות והאלבומים</h2>
-                        <button onclick="openAddFolderModal()" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg border border-white/10 transition-colors">+ תיקייה חדשה</button>
+                        <button onclick="window.openAddFolderModal()" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg border border-white/10 transition-colors">+ תיקייה חדשה</button>
                     </div>
                     
                     <div id="folderTabsContainer" class="flex gap-2 mb-6 overflow-x-auto pb-2 custom-scrollbar hide-scrollbar"></div>
@@ -478,7 +478,7 @@
                 <div class="glass-card p-6 shadow-xl flex flex-col min-h-[600px] border border-teal-500/20">
                     <input type="text" id="docTitleInput" placeholder="כותרת המסמך..." class="input-style mb-4 text-xl font-bold !bg-white/10 text-white placeholder-gray-400 border-teal-500/30 focus:border-teal-400 transition-all">
                     <textarea id="docContentInput" placeholder="התחל לכתוב את המסמך שלך כאן..." class="input-style flex-1 resize-none !bg-white/5 text-white p-4 text-lg leading-relaxed placeholder-gray-500 custom-scrollbar border-teal-500/10 focus:border-teal-400 transition-all"></textarea>
-                    <button onclick="saveDocument()" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 rounded-xl shadow-lg mt-4 transition-all">שמור מסמך ענן</button>
+                    <button onclick="window.saveDocument()" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 rounded-xl shadow-lg mt-4 transition-all">שמור מסמך ענן</button>
                 </div>
             </div>
             <div class="lg:col-span-4">
@@ -919,7 +919,7 @@
             if (!container) return;
             
             let html = `
-                <button onclick="selectFolder('general')" class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-bold transition-all border ${currentFolderId === 'general' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10'}">
+                <button onclick="window.selectFolder('general')" class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-bold transition-all border ${currentFolderId === 'general' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10'}">
                     כללי
                 </button>
             `;
@@ -927,7 +927,7 @@
             allFolders.forEach(f => {
                 const isActive = currentFolderId === f.id;
                 html += `
-                    <button onclick="selectFolder('${f.id}')" class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-bold transition-all border ${isActive ? 'bg-blue-600 border-blue-500 text-white' : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10'}">
+                    <button onclick="window.selectFolder('${f.id}')" class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-bold transition-all border ${isActive ? 'bg-blue-600 border-blue-500 text-white' : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10'}">
                         📁 ${f.name}
                     </button>
                 `;
@@ -1144,7 +1144,7 @@
                     <div class="text-6xl mb-4 opacity-50">🔒</div>
                     <h3 class="text-2xl font-bold text-gray-300">אזור אישי מוגן</h3>
                     <p class="text-gray-500 mb-6">מרכז הבקרה זמין למנהלי חשבונות בלבד. יש להתחבר כדי להמשיך.</p>
-                    <button onclick="openModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-all">התחברות למערכת</button>
+                    <button onclick="window.openModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-all">התחברות למערכת</button>
                 `;
                 return;
             }
@@ -1322,6 +1322,102 @@
             if (deleteConfirmTimer) clearTimeout(deleteConfirmTimer);
             document.getElementById('addProfileModal').classList.add('hidden');
         };
+
+        window.submitNewProfile = async () => {
+            const name = document.getElementById('newProfileName').value.trim();
+            const birthDate = document.getElementById('newProfileBirth').value;
+            
+            if(!name) return window.showToast("נא למלא את שם המשתמש", true);
+            if(!window.editingProfileId && profilesData.length >= 4) return window.showToast("הגעת למגבלת 4 משתמשים בחשבון", true);
+
+            const btn = document.getElementById('addProfileBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loader"></span> שומר...';
+            
+            try {
+                const user = window.auth.currentUser;
+                let age = null;
+                let isMinor = false;
+                
+                if (birthDate) {
+                    const birth = new Date(birthDate);
+                    age = new Date().getFullYear() - birth.getFullYear();
+                    isMinor = age < 18;
+                }
+                
+                let profileRef;
+                if (window.editingProfileId) {
+                    profileRef = window.doc(window.db, "artifacts", window.appId, "users", user.uid, "user_profiles", window.editingProfileId);
+                } else {
+                    profileRef = window.doc(window.collection(window.db, "artifacts", window.appId, "users", user.uid, "user_profiles"));
+                }
+                
+                const profileData = {
+                    id: profileRef.id,
+                    displayName: name,
+                    birthDate: birthDate || "",
+                    age: age,
+                    isMinor: isMinor
+                };
+
+                if (!window.editingProfileId) {
+                    profileData.createdAt = new Date().toISOString();
+                    profileData.isManager = false; 
+                    profileData.accountType = 'family';
+                }
+                
+                await window.setDoc(profileRef, profileData, { merge: true });
+                
+                window.showToast(window.editingProfileId ? "פרופיל עודכן בהצלחה!" : "פרופיל נוסף בהצלחה!", false);
+                window.closeAddProfile();
+                
+                loadProfiles(user); 
+            } catch(e) {
+                console.error(e);
+                window.showToast("שגיאה בשמירת פרופיל", true);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = window.editingProfileId ? "שמור שינויים" : "שמור והמשך";
+            }
+        };
+
+        window.deleteProfile = async () => {
+            if (!window.editingProfileId) return;
+            const btn = document.getElementById('deleteProfileBtn');
+
+            if (btn.dataset.confirm !== "true") {
+                btn.dataset.confirm = "true";
+                btn.textContent = "בטוח? לחץ שוב למחיקה";
+                deleteConfirmTimer = setTimeout(() => {
+                    btn.dataset.confirm = "false";
+                    btn.textContent = "מחק פרופיל";
+                }, 3000);
+                return;
+            }
+
+            if (deleteConfirmTimer) clearTimeout(deleteConfirmTimer);
+            btn.disabled = true;
+            btn.textContent = "מוחק...";
+
+            try {
+                const user = window.auth.currentUser;
+                await window.deleteDoc(window.doc(window.db, "artifacts", window.appId, "users", user.uid, "user_profiles", window.editingProfileId));
+
+                if (window.editingProfileId === sessionStorage.getItem('shoval_current_profile_id')) {
+                    sessionStorage.removeItem('shoval_current_profile_id');
+                    currentProfileId = null;
+                }
+
+                window.showToast("פרופיל נמחק בהצלחה", false);
+                window.closeAddProfile();
+                loadProfiles(user);
+            } catch(e) {
+                console.error(e);
+                window.showToast("שגיאה במחיקת פרופיל", true);
+                btn.disabled = false;
+                btn.textContent = "מחק פרופיל";
+            }
+        };
         
         window.showForm = (type) => {
             document.getElementById('authChoice').classList.add('hidden');
@@ -1494,7 +1590,6 @@
             listenToCloudTasks(window.auth.currentUser.uid, profileId);
             listenToCloudDocs(window.auth.currentUser.uid, profileId);
             
-            // טעינת ההגדרות (כולל מפתח ה-API) ברגע שהמשתמש מתחבר
             window.loadSettings();
             
             window.logActivity("נכנס/ה למערכת");
@@ -1574,7 +1669,7 @@
 
                 localStorage.setItem('shoval_simulated_logout', 'false');
                 window.showToast("חשבון המנהל נוצר בהצלחה!", false);
-                closeModal();
+                window.closeModal();
                 
                 window.selectProfile(profileData.id, profileData.displayName, profileData.isMinor, gradients[0], true, profileData.accountType);
             } catch (err) {
@@ -1608,7 +1703,7 @@
                 
                 localStorage.setItem('shoval_simulated_logout', 'false');
                 window.showToast("התחברת בהצלחה לענן!", false);
-                closeModal();
+                window.closeModal();
                 loadProfiles(window.auth.currentUser, true); 
             } catch (e) {
                 if (e.code === 'auth/invalid-credential' || e.code === 'auth/user-not-found' || e.code === 'auth/wrong-password') {
@@ -1654,7 +1749,7 @@
                         ${contentHtml}
                         <div class="flex justify-end items-center gap-2 mt-1">
                             <span class="text-[10px] text-purple-400/50 bg-purple-500/10 px-2 py-1 rounded-full font-bold tracking-widest uppercase">PRO</span>
-                            <button class="text-red-500/70 hover:text-red-500 p-2 transition-colors rounded-full hover:bg-red-500/10" onclick="deleteCloudTask('${t.id}')">
+                            <button class="text-red-500/70 hover:text-red-500 p-2 transition-colors rounded-full hover:bg-red-500/10" onclick="window.deleteCloudTask('${t.id}')">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </button>
                         </div>
@@ -1803,7 +1898,7 @@
                         ${contentHtml}
                         <div class="flex justify-end items-center gap-2">
                             <span class="text-[10px] text-gray-400 bg-white/5 px-2 py-1 rounded-full mr-2">זמני (לדפדפן זה)</span>
-                            <button class="text-red-500/70 hover:text-red-500 p-2 transition-colors rounded-full hover:bg-red-500/10" onclick="deleteGuestTask(${t.id})">
+                            <button class="text-red-500/70 hover:text-red-500 p-2 transition-colors rounded-full hover:bg-red-500/10" onclick="window.deleteGuestTask(${t.id})">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </button>
                         </div>
